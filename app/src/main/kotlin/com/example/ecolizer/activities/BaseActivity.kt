@@ -17,7 +17,7 @@ abstract class BaseActivity: AppCompatActivity() {
     override fun setContentView(view: View?) {
         super.setContentView(view)
     }
-
+    //Demian Ram Mer
     override fun onDestroy() {
         super.onDestroy()
     }
