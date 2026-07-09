@@ -13,14 +13,15 @@ abstract class BaseActivity: AppCompatActivity() {
         hideBars()
     }
 
+    // Kevin Abinady Mejia Flores
     override fun setContentView(view: View?) {
         super.setContentView(view)
     }
-
+    //Demian Ram Mer
     override fun onDestroy() {
         super.onDestroy()
     }
-
+    // Manuel
     fun hideBars() {
         supportActionBar?.hide()
 
