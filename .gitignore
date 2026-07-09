@@ -1,0 +1,14 @@
+# Entornos
+.idea/
+.vscode/
+*.iml
+
+# Compilaciones de Android/Kotlin/C++
+build/
+.gradle/
+out/
+cmake-build-*/
+
+# Archivos de SO
+.DS_Store
+Thumbs.db
