@@ -1,0 +1,230 @@
+\documentclass[12pt,letterpaper]{article}
+
+% --- Paquetes Básicos y de Idioma ---
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{geometry}
+\geometry{top=2.5cm, bottom=2.5cm, left=3cm, right=3cm}
+
+% --- Paquetes de Diseño y Tipografía ---
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{booktabs}    % Para tablas profesionales (Estimaciones/Riesgos)
+\usepackage{tabularx}    % Tablas con ancho ajustable (ideal para narrativas)
+\usepackage{graphicx}    % Para incluir los diagramas (.png, .jpg, .pdf)
+\usepackage{float}       % Para fijar la posición de las imágenes con [H]
+\usepackage{microtype}   % Mejora el espaciado del texto
+
+% --- Enlaces y Marcadores ---
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={Documento de Proyecto de Software},
+}
+
+% --- Configuración de Títulos ---
+\titleformat{\section}{\large\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\normalfont\bfseries}{\thesubsection}{0.5em}{}
+
+\begin{document}
+\begin{titlepage}
+    \centering
+    
+    % =========================================================
+    % LOGOS (Minipages para mantenerlos alineados arriba)
+    % =========================================================
+    \begin{minipage}{0.45\textwidth}
+        \begin{flushleft}
+            % Cambia 'logo_uam.png' por el nombre real de tu archivo
+            \includegraphics[height=3cm]{UAM.png}
+        \end{flushleft}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \begin{flushright}
+            % Cambia 'escudo_computacion.png' por el nombre real de tu archivo
+            \includegraphics[height=3cm]{ICUAM.jpg}
+        \end{flushright}
+    \end{minipage}
+    
+    \vspace{2.5cm} % Espacio entre los logos y el texto
+    
+    % =========================================================
+    % DATOS DE LA INSTITUCIÓN Y LA UEA
+    % =========================================================
+    {\Huge \bfseries Universidad Autónoma Metropolitana \par}
+    \vspace{0.5cm}
+    {\Large \bfseries Licenciatura en Ingeniería en Computación \par}
+    
+    \vspace{1.5cm}
+    
+    {\Large \textbf{UEA:} Desarrollo de Software a Gran Escala \par}
+    
+    \vspace{2cm}
+    
+    % =========================================================
+    % TÍTULO DEL PROYECTO
+    % =========================================================
+    {\huge \bfseries ECO-LIZER \par}
+    
+    \vspace{2cm}
+    
+    % =========================================================
+    % DATOS DEL EQUIPO
+    % =========================================================
+    {\Large \textbf{Equipo:} Los Borbotones \par}
+    \vspace{0.8cm}
+    
+    {\large \textbf{Integrantes:} \par}
+    \vspace{0.3cm}
+    {\large
+        Kevin Abinady Mejía Flores\\
+        José Manuel Cruz García\\
+        Víctor André Soto Sánchez \\
+        Demian Ramírez Mercado \\
+    \par}
+    
+    \vfill % Este comando empuja todo lo de abajo hacia el final de la página
+    
+    % =========================================================
+    % PROFESOR Y FECHA
+    % =========================================================
+    {\large \textbf{Profesor:} Ismael Ariel Robles Martínez \par}
+    \vspace{0.5cm}
+    %{\large \today \par} % \today pondrá la fecha de compilación automáticamente
+    
+    \vspace{1cm} % Margen inferior
+\end{titlepage}
+% =========================================================================
+% INTRODUCCIÓN
+% =========================================================================
+\section{Introducción}
+
+\subsection{Descripción breve del proyecto}
+
+\subsection{Objetivos del sistema}
+\begin{itemize}[label=•]
+    \item Objetivo general del sistema.
+    \item Objetivo específico 1.
+    \item Objetivo específico 2.
+\end{itemize}
+
+\newpage
+% =========================================================================
+% FASE DE INICIO
+% =========================================================================
+\section{Artefactos de la Fase de Inicio}
+
+\subsection{Documento de Visión}
+Coloca aquí el alcance del proyecto, las necesidades de los usuarios, los stakeholders principales y las características clave del producto.
+
+\subsection{Diagrama de Contexto}
+Descripción del entorno del sistema y sus interacciones externas.
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{ruta/al/diagrama_contexto.png}
+    \caption{Diagrama de Contexto del Sistema.}
+    \label{fig:contexto}
+\end{figure}
+
+\subsection{Modelo de Casos de Uso}
+Descripción general de los actores y los casos de uso principales.
+
+\subsubsection{Narrativas de Casos de Uso}
+% Plantilla profesional en tabla para las narrativas utilizando tabularx
+\begin{table}[H]
+\small
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+\textbf{Caso de Uso:} & \textbf{CU-01: Nombre del Caso de Uso} \\ \hline
+\textbf{Actor(es):} & Nombre del Actor \\ \hline
+\textbf{Descripción:} & Breve descripción de lo que hace el caso de uso. \\ \hline
+\textbf{Precondiciones:} & Estado inicial requerido antes de ejecutar el CU. \\ \hline
+\textbf{Flujo Principal:} & 
+1. El actor realiza una acción. \newline
+2. El sistema valida y responde. \newline
+3. El sistema guarda los cambios. \\ \hline
+\textbf{Flujos Alternos:} & A1. El sistema detecta un error en el paso 2 y notifica al usuario. \\ \hline
+\textbf{Postcondiciones:} & Estado final en el que queda el sistema. \\ \hline
+\end{tabularx}
+\caption{Narrativa para el CU-01.}
+\end{table}
+
+\subsection{Modelo de Dominio}
+Representación conceptual inicial de las entidades del negocio.
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{ruta/al/modelo_dominio.png}
+    \caption{Modelo de Dominio Inicial.}
+    \label{fig:dominio_inicio}
+\end{figure}
+
+\subsection{Lista y Plan de Gestión de Riesgos}
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{lXXc}
+\toprule
+\textbf{ID} & \textbf{Descripción del Riesgo} & \textbf{Estrategia de Mitigación} & \textbf{Impacto} \\
+\midrule
+R-01 & Retrasos en la integración de módulos. & Definir interfaces claras y hacer pruebas continuas. & Alto \\
+R-02 & Curva de aprendizaje de nuevas tecnologías. & Capacitación temprana mediante prototipos rápidos. & Medio \\
+\bottomrule
+\end{tabularx}
+\caption{Matriz de Gestión de Riesgos.}
+\end{table}
+
+\subsection{Estimaciones de Esfuerzo, Tiempo y Costo}
+Detalle del cálculo de las estimaciones del proyecto (por ejemplo, mediante puntos de caso de uso, juicio de expertos o cocomo).
+
+\subsection{Plan de Desarrollo de Software}
+Estrategia general del ciclo de vida del proyecto, fases, hitos y entregables globales.
+
+\subsection{Plan de Iteración}
+Objetivos específicos, actividades asignadas e issues críticos a resolver durante la iteración actual.
+
+\newpage
+% =========================================================================
+% FASE DE ELABORACIÓN
+% =========================================================================
+\section{Artefactos de la Fase de Elaboración}
+
+\subsection{Modelo de Dominio Refinado}
+Actualización del modelo conceptual tras el análisis detallado de los requisitos en la fase de elaboración.
+
+\subsection{Diagrama de Paquetes}
+Organización lógica de la arquitectura del software (capas, subsistemas o módulos).
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.7\textwidth]{ruta/al/diagrama_paquetes.png}
+    \caption{Diagrama de Estructura de Paquetes.}
+\end{figure}
+
+\subsection{Diagrama de Clases}
+Estructura técnica del código (clases, atributos, métodos y sus relaciones).
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.9\textwidth]{ruta/al/diagrama_clases.png}
+    \caption{Diagrama de Clases del Sistema.}
+\end{figure}
+
+\subsection{Diagrama de Secuencia}
+Interacción de los objetos a lo largo del tiempo para los escenarios críticos.
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.9\textwidth]{ruta/al/diagrama_secuencia.png}
+    \caption{Diagrama de Secuencia para el escenario principal.}
+\end{figure}
+
+\subsection{Diagrama de Despliegue}
+Arquitectura física del sistema (servidores, entornos de desarrollo, contenedores o bases de datos físicas donde correrá la aplicación).
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{ruta/al/diagrama_despliegue.png}
+    \caption{Diagrama de Despliegue de la Infraestructura.}
+\end{figure}
+
+\end{document}

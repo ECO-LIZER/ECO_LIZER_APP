@@ -7,7 +7,9 @@ plugins {
 android {
     namespace = "com.example.ecolizer"
     compileSdk {
-        version = release(36)
+        version = release(36) {
+            minorApiLevel = 1
+        }
     }
 
     buildFeatures {
