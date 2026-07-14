@@ -29,14 +29,12 @@ import java.util.UUID
 class ValidationActivity: BaseActivity() {
     private lateinit var binding: ActivityValidationBinding
 
-    // CONFIGURACIÓN BLUETOOTH
     private val myUUID: UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB")
     private val address: String = "00:22:09:01:10:70"
 
     private var socket: BluetoothSocket? = null
     private var isConnected = false
 
-    // VARIABLES DE LÓGICA
     private val requestEnableBT = 1
     private var cantidadActual = 0
     private var cantidadMeta = 5
@@ -45,7 +43,6 @@ class ValidationActivity: BaseActivity() {
     private var isRunning = false
     private var procesoTerminado = false
 
-    // VARIABLES DE ANIMACIÓN
     private val handlerAnimacion = Handler(Looper.getMainLooper())
     private var runnableAnimacion: Runnable? = null
     private var animacionActiva = false
@@ -206,7 +203,6 @@ class ValidationActivity: BaseActivity() {
             binding.tvValidating.setTextColor(Color.parseColor("#2E7D32"))
             binding.ivCheckmark.visibility = View.VISIBLE
 
-            // Enviar señal de cierre al Arduino
             enviarComandoBluetooth("C")
 
             Handler(Looper.getMainLooper()).postDelayed({
@@ -298,7 +294,6 @@ class ValidationActivity: BaseActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == requestEnableBT) {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // El usuario acaba de dar los permisos, ¡ahora sí nos conectamos!
                 conectarYEscuchar()
             } else {
                 Toast.makeText(this, "Los permisos son necesarios para conectar con la máquina", Toast.LENGTH_LONG).show()
