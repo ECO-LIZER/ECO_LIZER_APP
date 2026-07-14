@@ -1,4 +1,7 @@
-package com.example.ecolizer.room.entities 
+package com.example.ecolizer.room.entities
+
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 @Entity(tableName = "materiales")
 data class Material(

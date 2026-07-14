@@ -1,4 +1,11 @@
-package com.example.ecolizer.room.dao 
+package com.example.ecolizer.room.dao
+
+import androidx.lifecycle.LiveData
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
+import com.example.ecolizer.room.entities.Fallo
 
 @Dao
 interface FalloDao {

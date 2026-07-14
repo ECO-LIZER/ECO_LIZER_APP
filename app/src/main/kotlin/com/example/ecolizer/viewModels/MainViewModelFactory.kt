@@ -1,4 +1,9 @@
-package com.example.ecolizer.viewModels 
+package com.example.ecolizer.viewModels
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import com.example.ecolizer.room.dao.FalloDao
+import com.example.ecolizer.room.dao.MaterialDao
 
 class MainViewModelFactory(
     private val falloDao: FalloDao,

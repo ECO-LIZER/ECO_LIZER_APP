@@ -2,6 +2,29 @@ package com.example.ecolizer.room.database
 
 import android.content.Context
 import android.util.Log
+import androidx.room.Database
+import androidx.room.Room
+import androidx.room.RoomDatabase
+import androidx.sqlite.db.SupportSQLiteDatabase
+import com.example.ecolizer.room.dao.EstacionDao
+import com.example.ecolizer.room.dao.EventoDao
+import com.example.ecolizer.room.dao.FalloDao
+import com.example.ecolizer.room.dao.MaterialDao
+import com.example.ecolizer.room.dao.TransaccionDao
+import com.example.ecolizer.room.definitions.EstacionesDef
+import com.example.ecolizer.room.definitions.FallosDef
+import com.example.ecolizer.room.definitions.MaterialesDef
+import com.example.ecolizer.room.definitions.toEstacion
+import com.example.ecolizer.room.definitions.toFallo
+import com.example.ecolizer.room.definitions.toMaterial
+import com.example.ecolizer.room.entities.Estacion
+import com.example.ecolizer.room.entities.Evento
+import com.example.ecolizer.room.entities.Fallo
+import com.example.ecolizer.room.entities.Material
+import com.example.ecolizer.room.entities.Transaccion
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 @Database(
     entities = [Estacion::class, Fallo::class, Material::class, Transaccion::class, Evento::class],

@@ -1,4 +1,9 @@
-package com.example.ecolizer.room.entities 
+package com.example.ecolizer.room.entities
+
+import androidx.room.Entity
+import androidx.room.ForeignKey
+import androidx.room.Index
+import androidx.room.PrimaryKey
 
 @Entity(
     tableName = "eventos",
