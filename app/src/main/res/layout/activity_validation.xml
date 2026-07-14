@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:id="@+id/containerFlags"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:spacing="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/espania"
+            android:contentDescription="@string/app_name"
+            tools:tint="#F44336" />
+
+        <ImageView
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/mexico"
+            android:contentDescription="@string/app_name"
+            tools:tint="#4CAF50" />
+
+        <ImageView
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:src="@drawable/china"
+            android:contentDescription="@string/app_name"
+            tools:tint="#D32F2F" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvSystemId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID del sistema: 0XFFF"
+        android:textColor="#757575"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnInfo"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="18dp"
+        android:background="@android:drawable/ic_dialog_info"
+        android:backgroundTint="#8FBFFA"
+        android:backgroundTintMode="multiply"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSystemId" />
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="280dp"
+        android:layout_height="240dp"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toTopOf="@+id/tvWelcome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <LinearLayout
+        android:id="@+id/cardInstructions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/bg_card_beige"
+        android:backgroundTint="#EBDBCF"
+        android:elevation="18dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogo"
+        app:layout_constraintWidth_max="800dp">
+
+        <TextView
+            android:id="@+id/tvQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Esperando depósito..."
+            android:textColor="#555555"
+            android:textSize="26sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/tvMaterialDetected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Material detectado: "
+            android:textColor="#333333"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvValidating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Validando ..."
+            android:textColor="#333333"
+            android:textSize="28sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvSuccess"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Listo"
+                android:textColor="#333333"
+                android:textSize="30sp"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/ivCheckmark"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="12dp"
+                android:src="@drawable/check2"
+                android:visibility="gone"
+                 />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvStation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estación Parque Centenario"
+        android:textColor="#9E9E9E"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
